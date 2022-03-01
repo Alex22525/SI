@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <hr />
+  <button
+    class="btn btn-primary"
+    [disabled]="editButton"
+    [class]="editButton ? 'btnColorTrue' : 'btnColorFalse'"
+  >
+    Send
+  </button>
+  <button (click)="onClick()">Promijeni stanje</button>
+  <input type="text" [(ngModel)]="title" />
+  <hr />
+
+  <div *ngIf="editButton">
+    <p>Skrivena poruka</p>
+  </div>
+
+  <p *ngFor="let user of usernames; let i = index">
+    {{ user.username + " " + i }}
+  </p>
+  <hr />
+  <app-nova-komponenta></app-nova-komponenta>
+  <app-nova-komponenta></app-nova-komponenta>
+  <app-nova-komponenta></app-nova-komponenta>
+  <app-nova-komponenta></app-nova-komponenta>
+</div>
