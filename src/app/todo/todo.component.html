@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-10">
+    <input type="text" name="todo" class="form-control" [(ngModel)]="todoValue"/>
+  </div>
+  <div class="col-sm-2">
+    <button class="btn btn-primary" (click)="onTodoAdd(todoValue)" [disabled]="todoValue.length === 0">Dodaj zadatak</button>
+  </div>
+</div>
+<hr>
+<div>
+    <ul class="list-group">
+        <app-todo-item *ngFor="let todo of todos" [todo]="todo" (deleteTodo)="onDelete($event)" (editTodo)="onEdit($event)"></app-todo-item>
+    </ul>
+</div>
+<p *ngIf="todos.length === 0" class="alert-danger text-center">Trenutno ne postoji nijedan zadatak</p>

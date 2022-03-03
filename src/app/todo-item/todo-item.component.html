@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-sm-10">
+        <li class="list-group-item" *ngIf="!edit">{{ todo.title }}</li>
+        <input type="text" name="todo" [(ngModel)]="todo.title" class="form-control" *ngIf="edit">
+    </div>
+    <div class="col-sm-2">
+        <div *ngIf="!edit">
+            <button class="btn btn-primary mx-1" (click)="edit = true">Edituj</button>
+            <button class="btn btn-primary" (click)="onDelete(todo.id)">Obriši</button>
+        </div>
+        <button class="btn btn-primary my-1" (click)="edit = false" *ngIf="edit">Sačuvaj</button>
+
+    </div>
+</div>
