@@ -1,0 +1,12 @@
+<div class="d-flex mt-4 justify-content-center">
+  <div class="card mx-2" style="width: 18rem" *ngFor="let product of products">
+    <img [src]="product.image" class="card-img-top" [alt]="product.title" />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+      <a [routerLink]="['/product', product.id]" class="btn btn-primary" [queryParams]="{catogory: 'headphones'}">Buy</a>
+    </div>
+  </div>
+</div>
